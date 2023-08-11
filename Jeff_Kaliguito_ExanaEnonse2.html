@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table de multiplication</title>
+</head>
+<body>
+    <script>
+        let continuer = true;
+
+        while (continuer) {
+            const nombre = parseInt(prompt("Entrez un nombre pour générer sa table de multiplication :"));
+
+            if (!isNaN(nombre)) {
+                document.write("<h2>Table de multiplication de " + nombre + "</h2>");
+                document.write("<ul>");
+
+                for (let i = 1; i <= 10; i++) {
+                    const resultat = nombre * i;
+                    document.write("<li>" + nombre + " x " + i + " = " + resultat + "</li>");
+                }
+
+                document.write("</ul>");
+
+                const reponse = prompt("Voulez-vous générer une autre table de multiplication ? (W/N)").toLowerCase();
+                continuer = (reponse === "w");
+            } else {
+                alert("Veuillez entrer un nombre valide.");
+            }
+        }
+
+        document.write("<p>Programme terminé.</p>");
+    </script>
+</body>
+</html>
